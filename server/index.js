@@ -26,7 +26,7 @@ const startServer = async () => {
     origin: process.env.CORS_ORIGIN?.split(',') || [
       process.env.NODE_ENV === 'production' 
         ? 'https://yourdomain.com' 
-        : 'http://localhost:3000'
+        : 'http://localhost:5173'
     ],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
