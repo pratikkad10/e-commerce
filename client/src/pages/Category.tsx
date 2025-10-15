@@ -4,7 +4,6 @@ import { filteredProductsSelector } from "@/store/selectors/filteredProductsSele
 import FilterSidebar from "@/components/product/FilterSidebar"
 import ProductGrid from "@/components/product/ProductGrid"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Button } from "@/components/ui/button"
 import { SlidersHorizontal } from "lucide-react"
 
 const Category = () => {

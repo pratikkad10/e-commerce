@@ -1,6 +1,7 @@
 import { selectorFamily } from 'recoil'
 import { getReviewsByProduct } from '@/services/api'
-import { reviewsAtom, type Review } from '../atoms/reviewAtom'
+import { reviewsAtom } from '../atoms/reviewAtom'
+import type { Review } from '../atoms/reviewAtom'
 
 export const reviewsByProductQuery = selectorFamily<Review[], string>({
   key: 'reviewsByProductQuery',
