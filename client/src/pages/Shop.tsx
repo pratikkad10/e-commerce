@@ -27,10 +27,10 @@ const Shop = () => {
   
 
   return (
-    <div className="container mx-auto mt-12 px-4 py-8">
-      <h1 className="text-3xl text-center font-bold text-foreground mb-6">All Products</h1>
+    <div className="w-full max-w-[1600px] mx-auto mt-16 md:mt-20 px-4 py-4 md:py-8">
+      <h1 className="text-2xl md:text-3xl text-center font-bold text-foreground mb-4 md:mb-6">All Products</h1>
       
-      <div className="flex gap-4 md:gap-6">
+      <div className="flex flex-col md:flex-row gap-4 md:gap-6">
         {/* Desktop/Tablet Sidebar */}
         <aside className="hidden md:block w-56 lg:w-64 flex-shrink-0">
           <div className="sticky top-20 bg-card border border-border rounded-lg p-3 lg:p-4 shadow-sm">

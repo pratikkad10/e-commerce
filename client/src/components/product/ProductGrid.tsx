@@ -4,7 +4,7 @@ import Product_card from "./Product_card"
 
 const ProductGrid = memo(({ products }: { products: Product[] }) => {
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 justify-items-center">
+    <div className="grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-4 w-full">
       {products.map((product) => (
         <Product_card key={product._id} product={product} />
       ))} 
