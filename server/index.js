@@ -25,7 +25,7 @@ const startServer = async () => {
   app.use(cors({
     origin: process.env.CORS_ORIGIN?.split(',') || [
       process.env.NODE_ENV === 'production' 
-        ? 'https://yourdomain.com' 
+        ? 'https://e-commerce-eight-liard-88.vercel.app' 
         : 'http://localhost:5173'
     ],
     credentials: true,
