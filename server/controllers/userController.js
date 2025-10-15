@@ -358,6 +358,60 @@ export const adminToggleUserStatus = async (req, res) => {
   }
 };
 
+// ===== WISHLIST FUNCTIONS =====
+
+// Get user wishlist
+export const getWishlist = async (req, res) => {
+  try {
+    const user = await User.findById(req.user._id).populate('wishlist');
+    if (!user) {
+      return sendError(res, 404, 'User not found');
+    }
+    sendResponse(res, 200, 'Wishlist retrieved successfully', user.wishlist);
+  } catch (error) {
+    console.error('Get wishlist error:', error);
+    sendError(res, 500, 'Failed to retrieve wishlist');
+  }
+};
+
+// Add to wishlist
+export const addToWishlist = async (req, res) => {
+  try {
+    const { productId } = req.body;
+    if (!productId) {
+      return sendError(res, 400, 'Product ID is required');
+    }
+
+    const user = await User.findById(req.user._id);
+    if (!user) {
+      return sendError(res, 404, 'User not found');
+    }
+
+    await user.addToWishlist(productId);
+    sendResponse(res, 200, 'Product added to wishlist');
+  } catch (error) {
+    console.error('Add to wishlist error:', error);
+    sendError(res, 500, 'Failed to add to wishlist');
+  }
+};
+
+// Remove from wishlist
+export const removeFromWishlist = async (req, res) => {
+  try {
+    const { productId } = req.params;
+    const user = await User.findById(req.user._id);
+    if (!user) {
+      return sendError(res, 404, 'User not found');
+    }
+
+    await user.removeFromWishlist(productId);
+    sendResponse(res, 200, 'Product removed from wishlist');
+  } catch (error) {
+    console.error('Remove from wishlist error:', error);
+    sendError(res, 500, 'Failed to remove from wishlist');
+  }
+};
+
 // ===== UTILITY FUNCTIONS =====
 
 // Get user statistics

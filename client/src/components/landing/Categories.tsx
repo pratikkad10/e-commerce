@@ -2,9 +2,9 @@ import CategoryCard from "./CategoryCard"
 
 const Categories = () => {
     const categories = [
-        { name: "Men's", image: "/men-sit.jpg", path: "/men" },
-        { name: "Women's", image: "/women-studio.jpg", path: "/women" },
-        { name: "Kid's", image: "/kids-studio.jpg", path: "/kids" },
+        { name: "Men's", image: "/men-sit.jpg", path: "/category/men" },
+        { name: "Women's", image: "/women-studio.jpg", path: "/category/women" },
+        { name: "Kid's", image: "/kids-studio.jpg", path: "/category/kids" },
     ]
     return (
         <div className="my-20">

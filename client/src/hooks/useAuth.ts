@@ -9,7 +9,7 @@ export const useAuth = () => {
   useEffect(() => {
     getProfile()
       .then((response) => {
-        setUser(response.data.data?.user || null);
+        setUser(response.data.data || null);
       })
       .catch(() => {
         setUser(null);

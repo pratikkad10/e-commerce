@@ -6,6 +6,9 @@ import {
   addAddress,
   updateAddress,
   deleteAddress,
+  getWishlist,
+  addToWishlist,
+  removeFromWishlist,
   adminGetAllUsers,
   adminCreateUser,
   adminUpdateUser,
@@ -28,6 +31,11 @@ router.put('/change-password', changePassword);
 router.post('/address', addAddress);
 router.put('/address/:id', updateAddress);
 router.delete('/address/:id', deleteAddress);
+
+// Wishlist routes
+router.get('/wishlist', getWishlist);
+router.post('/wishlist', addToWishlist);
+router.delete('/wishlist/:productId', removeFromWishlist);
 
 // Admin routes for user management
 router.get('/admin/all', authorize(['admin']), adminGetAllUsers);

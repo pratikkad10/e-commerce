@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Menu, User2, X, LogIn, UserPlus, LogOut } from 'lucide-react'
+import { Menu, User2, X, LogIn, UserPlus, LogOut, MoreHorizontal, Home, ShoppingBag, InfoIcon, FileText, File, Contact } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 import { useRecoilValue, useSetRecoilState } from 'recoil'
 import { userAtom } from '@/store/atoms/userAtom'
@@ -16,11 +16,13 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '../ui/dropdown-menu'
+import Search from './Search'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const navigate = useNavigate()
   const user = useRecoilValue(userAtom)
+  
   const setUser = useSetRecoilState(userAtom)
 
   const handleLogout = () => {
@@ -35,34 +37,70 @@ const Navbar = () => {
       })
   }
 
-  const links = [
+  
+
+   const mainLinks = [
     { linkName: "Home", link: "/" },
     { linkName: "Categories", link: "/categories" },
     { linkName: "Shop", link: "/shop" },
+  ]
+
+  const moreLinks = [
     { linkName: "About", link: "/about" },
     { linkName: "Blog", link: "/blog" },
     { linkName: "Pages", link: "/pages" },
     { linkName: "Contact", link: "/contact" },
   ]
 
-  const shop = [
-    { linkName: "Men", link: "/men" },
-    { linkName: "Women", link: "/women" },
-    { linkName: "Kids", link: "/kids" },
-    { linkName: "Electronics", link: "/electronics" },
-    { linkName: "Home & Kitchen", link: "/home-kitchen" },
-    { linkName: "Beauty", link: "/beauty" },
-    { linkName: "Sports", link: "/sports" },
+  const links = [
+    { linkName: "Home", link: "/", icon: <Home /> },
+    { linkName: "Categories", link: "/categories", icon: <Menu /> },
+    { linkName: "Shop", link: "/shop", icon: <ShoppingBag /> },
+    { linkName: "About", link: "/about", icon: <InfoIcon /> },
+    { linkName: "Blog", link: "/blog", icon: <FileText /> },
+    { linkName: "Pages", link: "/pages", icon: <File /> },
+    { linkName: "Contact", link: "/contact", icon: <Contact /> },
+    { linkName: "Profile", link: "/profile", icon: <User2 /> },
   ]
+
+  // const shop = [
+  //   { linkName: "Men", link: "/men" },
+  //   { linkName: "Women", link: "/women" },
+  //   { linkName: "Kids", link: "/kids" },
+  //   { linkName: "Electronics", link: "/electronics" },
+  //   { linkName: "Home & Kitchen", link: "/home-kitchen" },
+  //   { linkName: "Beauty", link: "/beauty" },
+  //   { linkName: "Sports", link: "/sports" },
+  // ]
 
   return (
     <nav className='flex justify-between items-center px-4 md:px-6 py-4 bg-transparent fixed top-0 left-0 right-0 z-50'>
       <LogoText />
 
-      <div className="hidden md:flex items-center gap-6">
-        {links.map((item) => (
+      <div className="hidden md:block flex-1 mx-55">
+        <Search />
+      </div>
+
+      <div className="hidden md:flex items-center pr-38 gap-6">
+        {mainLinks.map((item) => (
           <Link key={item.link} linkName={item.linkName} link={item.link} />
         ))}
+        
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="ghost" size="sm">
+              <MoreHorizontal className="h-4 w-4 mr-2" />
+              More
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent>
+            {moreLinks.map((item) => (
+              <DropdownMenuItem key={item.link} onClick={() => navigate(item.link)}>
+                {item.linkName}
+              </DropdownMenuItem>
+            ))}
+          </DropdownMenuContent>
+        </DropdownMenu>
       </div>
 
       <div className="hidden md:flex items-center gap-4">
@@ -149,11 +187,14 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="absolute top-full left-0 right-0 bg-background text-foreground border-b border-border md:hidden">
           <div className="flex flex-col p-4 gap-4">
+              <Search />
+            
             {links.map((item) => (
               <Link
                 key={item.link}
                 linkName={item.linkName}
                 link={item.link}
+                icon={item.icon}
               />
             ))}
           </div>

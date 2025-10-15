@@ -1,39 +1,42 @@
+import { useNavigate } from "react-router-dom"
 import Banner from "@/components/categories/Banner"
 
 const Categories = () => {
+    const navigate = useNavigate()
+
     return (
         <div className="">
             <div>
                 <Banner
-                    image="/women-se.png"
+                    image="/women5.png"
                     backgroundImage="/banner-bg1.jpg"
                     sectionName="Women's Collection"
                     description="Embrace elegance and confidence with our latest arrivals — where fashion meets comfort in every detail."
-                    onClick={() => { }}
+                    onClick={() => navigate('/category/women')}
                 />
 
                 <Banner
-                    image="/men-se.png"
+                    image="/male2.png"
                     backgroundImage="/banner-bg3.jpg"
                     sectionName="Men's Collection"
                     description="Redefine your style with our bold and timeless essentials — crafted for comfort, confidence, and everyday sophistication."
-                    onClick={() => { }}
+                    onClick={() => navigate('/category/men')}
                     flip={true}
                 />
 
                 <Banner
-                    image="/kids.png"
+                    image="/kids2.png"
                     backgroundImage="/banner-bg1.jpg"
                     sectionName="Kids' Collection"
                     description="Bright colors, comfy fits, and endless fun — explore the collection that keeps up with every adventure."
-                    onClick={() => { }}
+                    onClick={() => navigate('/category/kids')}
                 />
                 <Banner
                     image="/Electronic.png"
                     backgroundImage="/banner-bg3.jpg"
                     sectionName="Electronics"
                     description="Discover cutting-edge gadgets and smart devices — designed to make your life easier, faster, and smarter."
-                    onClick={() => { }}
+                    onClick={() => navigate('/category/electronics')}
                     flip={true}
                 />
 
@@ -43,7 +46,7 @@ const Categories = () => {
                     sectionName="Home & Kitchen"
                     description="Upgrade your living space with stylish home and kitchen essentials."
                     flip={false}
-                    onClick={() => { }}
+                    onClick={() => navigate('/category/home-kitchen')}
 
 
                 />
@@ -53,7 +56,7 @@ const Categories = () => {
                     sectionName="Beauty"
                     description="Discover top beauty products and skincare essentials."
                     flip={true}
-                    onClick={() => { }}
+                    onClick={() => navigate('/category/beauty')}
 
                 />
                 <Banner
@@ -62,7 +65,7 @@ const Categories = () => {
                     sectionName="Sports"
                     description="Gear up with the latest sports equipment and apparel."
                     flip={false}
-                    onClick={() => { }}
+                    onClick={() => navigate('/category/sports')}
 
                 />
                 <Banner
@@ -71,7 +74,7 @@ const Categories = () => {
                     sectionName="Footwear"
                     description="Step into style with the latest collection of shoes and sneakers."
                     flip={true}
-                    onClick={() => { }}
+                    onClick={() => navigate('/category/footwear')}
                 />
                 <Banner
                     image="/stationary.png"
@@ -79,7 +82,7 @@ const Categories = () => {
                     sectionName="Books & Stationery"
                     description="Find your next favorite read and essential stationery supplies."
                     flip={false} 
-                    onClick={() => { }}
+                    onClick={() => navigate('/category/books-stationery')}
                 />
 
             </div>

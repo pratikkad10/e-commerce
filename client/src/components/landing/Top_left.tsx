@@ -1,6 +1,9 @@
+import { useNavigate } from 'react-router-dom'
 import { ArrowUpRight, Grid2X2Plus, PlusIcon } from 'lucide-react'
 
 const Top_left = () => {
+  const navigate = useNavigate()
+
   return (
     <div className="section-top-left w-sm lg:w-1/3  lg:p-4" >
                     <div className="left-top mt-30" >
@@ -25,7 +28,7 @@ const Top_left = () => {
 
                         <div className="flex justify-between items-center gap-2 mt-4 pl-8">
                             <span className="font-semibold flex items-center">1,20,000<PlusIcon className="h-4 w-4" /></span>
-                            <span className="capitalize cursor-pointer italic underline">EXPLORE<ArrowUpRight className="inline h-6 w-6" /></span>
+                            <span onClick={() => navigate('/shop')} className="capitalize cursor-pointer italic underline hover:text-primary transition-colors">EXPLORE<ArrowUpRight className="inline h-6 w-6" /></span>
                         </div>
                     </div>
                 </div>
