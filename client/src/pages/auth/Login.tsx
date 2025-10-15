@@ -22,8 +22,12 @@ const Login = () => {
     loginUser(formData)
       .then((response) => {
         const userData = response.data.data?.user;
+        const token = response.data.data?.token;
         if (userData) {
           setUser(userData);
+        }
+        if (token) {
+          localStorage.setItem('token', token);
         }
         toast.success('Login successful!')
         navigate('/') 
