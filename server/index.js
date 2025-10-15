@@ -24,7 +24,7 @@ const startServer = async () => {
   app.use(helmet());
   app.use(cors({
     origin: (origin, callback) => {
-      const allowedOrigins = ['https://e-commerce-dpr4iuym2-pratikkad10s-projects.vercel.app'];
+      const allowedOrigins = ['https://e-commerce-dpr4iuym2-pratikkad10s-projects.vercel.app', 'http://localhost:5173'];
       if (!origin || allowedOrigins.includes(origin) || origin.endsWith('.vercel.app')) {
         callback(null, true);
       } else {

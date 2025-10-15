@@ -5,6 +5,7 @@ export const searchProductsSelector = selectorFamily({
   key: 'searchProducts',
   get: (query: string) => ({ get }) => {
     const products = get(productsQuery);
+    if (!Array.isArray(products)) return [];
     if (!query) return products;
     
     const lowerQuery = query.toLowerCase();
