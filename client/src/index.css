@@ -1,4 +1,4 @@
-@import "tailwindcss";
+/* @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
@@ -44,7 +44,7 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(90.826% 0.00215 14.553);
+  --background: oklch(95.643% 0.02787 62.219);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
@@ -79,7 +79,7 @@
 
 .dark {
   --background: oklch(18.22% 0.00002 271.152);
-  --foreground: oklch(76.676% 0.00009 271.152);
+  --foreground: oklch(93.705% 0.00011 271.152);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
@@ -111,6 +111,102 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans overflow-x-hidden;
+  }
+} */
+
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Geist", sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+:root {
+  --radius: 0.625rem;
+
+  /* ⚪ LIGHT MODE — White Base, Warm Terracotta Accents */
+  --background: oklch(100% 0 0); /* pure white */
+  --foreground: oklch(20% 0 0);  /* near black text */
+
+  --card: oklch(98% 0 0);
+  --card-foreground: oklch(20% 0 0);
+
+  --popover: oklch(98% 0 0);
+  --popover-foreground: oklch(20% 0 0);
+
+  /* Accent palette */
+  --primary: oklch(78% 0.10 60);         /* #E68A61 – warm terracotta */
+  --primary-foreground: oklch(18% 0 0);
+  --secondary: oklch(93% 0.05 90);       /* #FFECC0 – soft cream */
+  --secondary-foreground: oklch(25% 0 0);
+  --accent: oklch(89% 0.08 70);          /* #FFC29B – peach */
+  --accent-foreground: oklch(25% 0 0);
+
+  /* Base neutrals */
+  --muted: oklch(95% 0 0);
+  --muted-foreground: oklch(40% 0 0);
+  --border: oklch(90% 0 0);
+  --input: oklch(90% 0 0);
+  --ring: oklch(75% 0.04 70);
+}
+
+.dark {
+  /* ⚫ DARK MODE — Black Base with Soft Warm Accents */
+  --background: oklch(18% 0 0); /* deep black/charcoal */
+  --foreground: oklch(95% 0 0); /* light text */
+
+  --card: oklch(22% 0 0);
+  --card-foreground: oklch(95% 0 0);
+
+  --popover: oklch(22% 0 0);
+  --popover-foreground: oklch(95% 0 0);
+
+  /* Warm earthy accents */
+  --primary: oklch(70% 0.09 60);         /* softened terracotta */
+  --primary-foreground: oklch(18% 0 0);
+  --secondary: oklch(80% 0.06 90);       /* warm cream tone */
+  --secondary-foreground: oklch(18% 0 0);
+  --accent: oklch(73% 0.07 70);          /* muted peach */
+  --accent-foreground: oklch(18% 0 0);
+
+  /* Neutral structure */
+  --muted: oklch(25% 0 0);
+  --muted-foreground: oklch(80% 0 0);
+  --border: oklch(35% 0 0);
+  --input: oklch(35% 0 0);
+  --ring: oklch(60% 0.04 70);
+}
 
 @layer base {
   * {

@@ -12,18 +12,9 @@ const Shop = () => {
   const productsLoadable = useRecoilValueLoadable(filteredProductsSelector);
   const [showMobileFilters, setShowMobileFilters] = useState(false);
   
-
-  if (productsLoadable.state === 'loading') {
-    return <ProductsLoading />
-  }
-
-  if (productsLoadable.state === 'hasError') {
-    return <ProductError />
-  }
-
-  const products = productsLoadable.contents;
-  
-  console.log(products);
+  const isLoading = productsLoadable.state === 'loading';
+  const hasError = productsLoadable.state === 'hasError';
+  const products = productsLoadable.state === 'hasValue' ? productsLoadable.contents : [];
   
 
   return (
@@ -74,12 +65,20 @@ const Shop = () => {
 
         {/* Main Content */}
         <main className="flex-1 min-w-0">
-          <div className="flex items-center justify-between mb-4 pb-3 border-b border-border">
-            <p className="text-sm font-medium text-muted-foreground">
-              {products.length} {products.length === 1 ? 'product' : 'products'} found
-            </p>
-          </div>
-          <ProductGrid products={products} />
+          {isLoading ? (
+            <ProductsLoading />
+          ) : hasError ? (
+            <ProductError />
+          ) : (
+            <>
+              <div className="flex items-center justify-between mb-4 pb-3 border-b border-border">
+                <p className="text-sm font-medium text-muted-foreground">
+                  {products.length} {products.length === 1 ? 'product' : 'products'} found
+                </p>
+              </div>
+              <ProductGrid products={products} />
+            </>
+          )}
         </main>
       </div>
     </div>
