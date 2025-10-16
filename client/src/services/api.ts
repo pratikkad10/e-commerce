@@ -1,7 +1,9 @@
 import axios from "axios";
 
+//https://e-commerce-ghmy.onrender.com  production backend url
+
 const api = axios.create({
-    baseURL: "http://localhost:5000/api/v1",
+    baseURL: "https://e-commerce-ghmy.onrender.com",
     withCredentials: true,
 });
 
