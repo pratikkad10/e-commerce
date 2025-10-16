@@ -19,6 +19,7 @@ import { useProducts } from './hooks/useProducts'
 import ProtectedRoute from './components/auth/ProtectedRoute'
 import Product from './pages/Product'
 import Category from './pages/Category'
+import Pages from './pages/Pages'
 
 function App() {
   //this use auth runs on the mounting of app
@@ -41,7 +42,9 @@ function App() {
           <Route path='/blog' element={<Blog />} />
           <Route path='/category/:slug' element={<Category />} />
           <Route path='/product/:id' element={<Product />} />
-          
+          <Route path='/pages' element={<Pages />} />
+
+
           <Route element={<ProtectedRoute />}>
             <Route path='/cart' element={<Cart />} />
             <Route path='/checkout' element={<div>Checkout Page - To be implemented</div>} />
