@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "https://e-commerce-ghmy.onrender.com/api/v1",
+    baseURL: "http://localhost:5000/api/v1",
     withCredentials: true,
 });
 
