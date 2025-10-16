@@ -16,14 +16,14 @@ const Contact = () => {
   return (
     <div className="container mx-auto mt-16 px-4 ">
       <div className="max-w-5xl mx-auto">
-        <h1 className="text-4xl font-bold text-foreground text-center mb-4">Contact Us</h1>
+        <h1 className="text-4xl font-bold text-foreground/90 text-center mb-4">Contact Us</h1>
         <p className="text-muted-foreground text-center mb-12">
           Have questions? We'd love to hear from you
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
-            <h2 className="text-2xl font-semibold text-foreground mb-6">Get in Touch</h2>
+            <h2 className="text-2xl font-semibold text-foreground/90 mb-6">Get in Touch</h2>
             
             <div className="space-y-6">
               <div className="flex items-start gap-4">

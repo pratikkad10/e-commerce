@@ -7,9 +7,9 @@ const Categories = () => {
         { name: "Kid's", image: "/kids-studio.jpg", path: "/category/kids" },
     ]
     return (
-        <div className="my-20">
-            <h2 className="lg:text-4xl text-muted-foreground text-2xl text-center font-bold ">OUR CATEGORIES</h2>
-            <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-10 lg:gap-20 mt-6 px-4 sm:px-6 md:px-12 lg:px-24 xl:px-40 bg-background">
+        <div className="">
+            <h2 className="lg:text-4xl text-foreground/90 text-2xl text-center font-semibold  ">Our categories</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mt-6 px-4 sm:px-6 md:px-12 lg:px-24 xl:px-40 bg-background">
                 {categories.map((category) => (
                     <CategoryCard
                         key={category.name}

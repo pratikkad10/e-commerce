@@ -57,7 +57,7 @@ const ReviewItem = ({ id, userName, userAvatar, rating, comment, date, likes, di
         <div className="flex-1">
           <div className="flex items-start justify-between mb-2">
             <div>
-              <h4 className="font-semibold text-foreground">{userName}</h4>
+              <h4 className="font-semibold text-foreground/90">{userName}</h4>
               <p className="text-xs text-muted-foreground">{date}</p>
             </div>
             <RatingStars rating={rating} size="sm" />

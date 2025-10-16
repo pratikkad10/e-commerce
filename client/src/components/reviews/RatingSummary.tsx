@@ -17,7 +17,7 @@ const RatingSummary = ({ averageRating, totalReviews, ratingDistribution }: Rati
   return (
     <Card className="p-6 rounded-2xl border border-border/50 bg-card/50 sticky top-4">
       <div className="text-center mb-6">
-        <h3 className="text-lg font-semibold text-foreground mb-2">Rating Summary</h3>
+        <h3 className="text-lg font-semibold text-foreground/90 mb-2">Rating Summary</h3>
         <div className="text-5xl font-bold text-primary mb-2">
           {averageRating.toFixed(1)}
         </div>

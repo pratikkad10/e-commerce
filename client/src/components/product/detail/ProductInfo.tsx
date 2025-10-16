@@ -37,7 +37,7 @@ const ProductInfo = ({
     <div className="space-y-6">
       <div>
         <Badge variant="secondary" className="mb-3">{brand.name}</Badge>
-        <h1 className="text-2xl sm:text-3xl font-bold text-foreground mb-1">{name}</h1>
+        <h1 className="text-2xl sm:text-3xl font-bold text-foreground/90 mb-1">{name}</h1>
         <p className="text-sm text-muted-foreground">{category.name}</p>
       </div>
 

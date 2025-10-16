@@ -54,7 +54,7 @@ const Blog = () => {
 
   return (
     <div className="container mx-auto mt-12 px-4 py-8">
-      <h1 className="text-3xl font-bold text-foreground text-center mb-2">Our Blog</h1>
+      <h1 className="text-3xl font-bold text-foreground/90 text-center mb-2">Our Blog</h1>
       <p className="text-muted-foreground text-center mb-8 text-sm">
         Tips, trends, and insights for smart shopping
       </p>
@@ -66,6 +66,7 @@ const Blog = () => {
               <img 
                 src={blog.image} 
                 alt={blog.title}
+                loading="lazy"
                 className="w-full h-full object-cover hover:scale-105 transition-transform"
               />
             </div>

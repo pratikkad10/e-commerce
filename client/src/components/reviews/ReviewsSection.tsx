@@ -81,7 +81,7 @@ const ReviewsSection = ({ reviews, averageRating, totalReviews, ratingDistributi
       <div className="lg:col-span-2 space-y-6">
         <div className="flex items-center justify-between flex-wrap gap-4">
           <div>
-            <h2 className="text-xl font-bold text-foreground">Review List</h2>
+            <h2 className="text-xl font-bold text-foreground/90">Review List</h2>
             <p className="text-sm text-muted-foreground mt-1">
               Showing 1–{Math.min(sortedReviews.length, totalReviews)} of {totalReviews} results
             </p>

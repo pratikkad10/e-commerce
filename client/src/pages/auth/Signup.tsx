@@ -59,7 +59,7 @@ const Signup = () => {
     <div className="min-h-screen flex items-center justify-center px-4 py-12">
       <div className="w-full max-w-md space-y-8">
         <div className="text-center space-y-2">
-          <h1 className="text-3xl font-bold text-foreground">Create Account</h1>
+          <h1 className="text-3xl font-bold text-foreground/90">Create Account</h1>
           <p className="text-muted-foreground">Sign up to get started</p>
           <Button type="button" variant="outline" size="sm" onClick={fillSampleData}>
             Fill Sample Data

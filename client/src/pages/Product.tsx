@@ -10,7 +10,7 @@ const Product = () => {
   if (!product) {
     return (
       <div className="container mx-auto mt-12 px-4 py-8 text-center">
-        <h2 className="text-2xl font-bold text-foreground">Product not found</h2>
+        <h2 className="text-2xl font-bold text-foreground/90">Product not found</h2>
         <p className="text-muted-foreground mt-2">The product you're looking for doesn't exist.</p>
       </div>
     )

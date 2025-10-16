@@ -14,6 +14,7 @@ const ImageGallery = ({ images, primaryImage }: ImageGalleryProps) => {
         <img
           src={selectedImage}
           alt="Product"
+          loading="lazy"
           className="w-full h-full object-cover"
         />
       </div>
@@ -26,7 +27,7 @@ const ImageGallery = ({ images, primaryImage }: ImageGalleryProps) => {
               selectedImage === img.url ? 'border-primary shadow-lg' : 'border-border hover:border-primary/50'
             }`}
           >
-            <img src={img.url} alt={img.alt} className="w-full h-full object-cover" />
+            <img src={img.url} alt={img.alt} loading="lazy" className="w-full h-full object-cover" />
           </button>
         ))}
       </div>

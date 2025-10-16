@@ -54,7 +54,7 @@ const FilterSidebar = memo(() => {
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between pb-4 border-b border-border">
-        <h2 className="text-lg font-semibold text-foreground">Filters</h2>
+        <h2 className="text-lg font-semibold text-foreground/90">Filters</h2>
         <Button variant="ghost" size="sm" onClick={clearAllFilters} className="text-muted-foreground hover:text-foreground">
           <X className="h-4 w-4 mr-1" />
           Clear All
@@ -77,7 +77,7 @@ const FilterSidebar = memo(() => {
 
       <div className="pb-4 border-b border-border">
         <Label className="text-foreground mb-3 block">Category</Label>
-        <RadioGroup value={selectedCategory} onValueChange={setSelectedCategory}>
+        <RadioGroup value={selectedCategory} onValueChange={setSelectedCategory} className="max-h-48 overflow-y-auto hide-scrollbar">
           {categories.filter((cat): cat is string => typeof cat === 'string').map(cat => (
             <div key={cat} className="flex items-center space-x-2">
               <RadioGroupItem value={cat} id={`cat-${cat}`} />
@@ -91,7 +91,7 @@ const FilterSidebar = memo(() => {
 
       <div className="pb-4 border-b border-border">
         <Label className="text-foreground mb-3 block">Brand</Label>
-        <RadioGroup value={selectedBrand} onValueChange={setSelectedBrand} className="max-h-48 overflow-y-auto">
+        <RadioGroup value={selectedBrand} onValueChange={setSelectedBrand} className="max-h-48 overflow-y-auto hide-scrollbar">
           {brands.filter((brand): brand is string => typeof brand === 'string').map(brand => (
             <div key={brand} className="flex items-center space-x-2">
               <RadioGroupItem value={brand} id={`brand-${brand}`} />

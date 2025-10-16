@@ -5,14 +5,15 @@ const Top_left = () => {
   const navigate = useNavigate()
 
   return (
-    <div className="section-top-left w-sm lg:w-1/3  lg:p-4" >
+    <div className="section-top-left w-sm lg:w-1/3 lg:p-4" >
                     <div className="left-top mt-30" >
-                        <h1 className="capitalize font-bold text-5xl lg:text-7xl tracking-wider">
+                        <h1 className="capitalize text-foreground/90 font-bold text-5xl lg:text-7xl tracking-wider">
                             SLAY THE
                             <br />
                             DAY IN 
                         </h1>
-                        <h1 className="lg:text-6xl text-2xl flex italic" >
+                        <h1 className="lg:text-6xl text-2xl 
+                        text-muted-foreground flex italic" >
                             STYLE
                             <span className="">
                                 <ArrowUpRight className="lg:h-16 h-8 w-10 lg:w-16" />
