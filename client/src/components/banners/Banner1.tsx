@@ -5,9 +5,9 @@ const Banner1 = () => {
             <h1 className="lg:text-6xl text-3xl font-birthstone text-center">We are Open</h1>
 
             <div className="pt-4">
-                <div className="rounded-t-[14rem] overflow-hidden">
+                <div className="lg:rounded-t-[14rem] rounded-t-4xl overflow-hidden">
                     <img loading="lazy" src="/hanger-shirts.jpg"
-                        className="h-150 w-full shadow-2xl"
+                        className="lg:h-150 h-40 w-full shadow-2xl"
                         alt="" />
                 </div>
             </div>
