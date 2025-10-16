@@ -5,7 +5,7 @@ const Banner2 = () => {
 
     const navigate = useNavigate();
     return (
-        <div className="lg:h-[80vh] mt-16 lg:mt-0 bg-[#f3f2f3] dark:bg-background overflow-hidden flex items-center justify-center">
+        <div className="lg:h-[80vh] mt-16 lg:mt-0 py-4 bg-[#f3f2f3] dark:bg-background overflow-hidden flex items-center justify-center">
             <div className="flex items-center gap-4 md:gap-8 lg:gap-38">
                 <div className="hidden sm:block -ml-10 sm:-ml-20 lg:-ml-30 flex-shrink-0">
                     <img className="h-[50vh] sm:h-[60vh] lg:h-[80vh] object-contain" loading="lazy" src="/women-studio.png" alt="Fashion Model" />
