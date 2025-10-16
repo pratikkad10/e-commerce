@@ -1,9 +1,9 @@
 import axios from "axios";
 
-//https://e-commerce-ghmy.onrender.com  production backend url
+//https://e-commerce-ghmy.onrender.com/api/v1  production backend url
 
 const api = axios.create({
-    baseURL: "https://e-commerce-ghmy.onrender.com",
+    baseURL: "https://e-commerce-ghmy.onrender.com/api/v1",
     withCredentials: true,
 });
 
