@@ -92,3 +92,32 @@
     display: none;
   }
 }
+
+.bg-amber-glow {
+  background-image: radial-gradient(125% 125% at 50% 10%, var(--background) 40%, #f59e0b 100%);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.dark .bg-amber-glow {
+  background-image: radial-gradient(125% 125% at 50% 10%, var(--background) 40%, #f59e0b 95%);
+}
+
+.bg-ambaint {
+  background-image: radial-gradient(125% 125% at 50% 10%, var(--background) 40%, #f59e0b 100%);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.ambaint-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 0; /* keep it behind content, but not negative */
+  pointer-events: none;
+}
+
+.content-layer {
+  position: relative;
+  z-index: 10;
+}
